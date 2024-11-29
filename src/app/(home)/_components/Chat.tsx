@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import axios from 'axios';
+import useChatStore from '@/store/useChatStore';
 
 type Message = {
   content: string;
@@ -13,11 +14,12 @@ export default function Chat() {
   const [loading, setLoading] = useState(false);
   const [inputMessage, setInputMessage] = useState('');
 
+  const { chatType, personality, ageGroup } = useChatStore();
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputMessage.trim()) return;
 
-    // 사용자 메시지 추가
     const userMessage: Message = {
       content: inputMessage,
       isUser: true,
@@ -30,9 +32,9 @@ export default function Chat() {
     try {
       const { data } = await axios.post('/api/openai', {
         message: inputMessage,
+        config: { chatType, personality, ageGroup },
       });
 
-      // AI 응답 메시지 추가
       const aiMessage: Message = {
         content: data.result.content,
         isUser: false,
@@ -49,7 +51,7 @@ export default function Chat() {
   return (
     <div className='w-full flex flex-col items-center mt-8'>
       <form onSubmit={handleSubmit} className='flex flex-col items-center'>
-        <h1 className='font-bold text-lg mb-4'>데이팅 챗봇</h1>
+        <h1 className='font-bold text-lg mb-4'>AI 채팅</h1>
         <main className='w-[600px] flex flex-col'>
           <section className='w-full h-[600px] shadow-lg p-4 overflow-y-auto bg-gray-50 rounded-lg'>
             <div className='flex flex-col space-y-4'>
