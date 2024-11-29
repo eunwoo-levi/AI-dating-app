@@ -1,9 +1,9 @@
-import ChatContainer from './_components/ChatContainer';
+import ChatbotContainer from './_components/ChatbotContainer';
 
 export default function HomePage() {
   return (
     <main className='p-4'>
-      <ChatContainer />
+      <ChatbotContainer />
     </main>
   );
 }
