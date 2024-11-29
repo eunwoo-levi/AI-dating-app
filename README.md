@@ -1,4 +1,45 @@
-# AI-dating-app
+# AI Dating ChatBot
+
+Next.js 15와 OpenAI API를 활용한 AI 데이팅 및 상담 챗봇 애플리케이션입니다.
+
+## 기술 스택
+
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** TailwindCSS
+- **State Management:** Zustand
+- **API:** OpenAI API
+- **HTTP Client:** Axios
+
+## 주요 기능
+
+1. **챗봇 유형 선택**
+   - 캐주얼 대화
+   - 연애(남자친구/여자친구) 대화
+   - 고민 상담
+
+2. **AI 성격 커스터마이징**
+   - 친절한 성격
+   - 츤데레 성격
+   - 쿨한 성격
+
+3. **연령대 설정**
+   - 10대
+   - 20대
+   - 30대 이상
+
+
+
+
+
+## 향후 계획
+
+- [ ] 채팅 히스토리 저장 기능
+- [ ] 다양한 AI 성격 추가
+- [ ] 음성 채팅 지원
+
+
+***
 
 ---
 
