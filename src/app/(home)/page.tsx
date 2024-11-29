@@ -1,9 +1,9 @@
-import Chat from './_components/Chat';
+import ChatContainer from './_components/ChatContainer';
 
 export default function HomePage() {
   return (
     <main className='p-4'>
-      <Chat />
+      <ChatContainer />
     </main>
   );
 }
