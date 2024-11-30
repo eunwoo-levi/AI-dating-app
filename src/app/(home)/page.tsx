@@ -2,7 +2,7 @@ import ChatbotContainer from './_components/ChatbotContainer';
 
 export default function HomePage() {
   return (
-    <main className='p-4'>
+    <main className='mt-[100px]'>
       <ChatbotContainer />
     </main>
   );
